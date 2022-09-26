@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: raleway;
+  font-display: swap;
+  src: url("../fonts/raleway-black.woff2") format("woff2"), url("../fonts/raleway-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: raleway;
+  font-display: swap;
+  src: url("../fonts/raleway-regular.woff2") format("woff2"), url("../fonts/raleway-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "raleway";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "raleway";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+body {
+  background-color: #010101;
+  line-height: 1.55;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+:root {
+  --index: calc(1vw + 1vh);
+  --text: #e7e7e0;
+  --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../fonts/raleway-black.woff2);
+  font-weight: 900;
+}
+
+body {
+  background-color: #010101;
+  font-family: raleway_f, sans-serif;
+  line-height: 1.55;
+}
+
+.main-header {
+  position: relative;
+}
+
+.no-webp .main-header::after{
+  background-image: url(../img/ground.png); }
+
+.main-header::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: calc(var(--index) * 10);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: calc(var(--index) * -4.5);
+}
+
+.layers {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 2;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.layers__base {
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layers__middle {
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.layer__header {
+  z-index: 1;
+  -webkit-transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+          transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 15px #9d822b;
+}
+
+.layers__title {
+  font-size: calc(var(--index) * 2.65);
+  letter-spacing: calc(var(--index) / 2.25);
+}
+
+.layers__caption {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * -0.75);
+}
+
+.main-article {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+
+.main-article__header {
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 1.8);
+  letter-spacing: calc(var(--index) / 7.5);
+  -webkit-transform: var(--main-article-transform);
+      -ms-transform: var(--main-article-transform);
+          transform: var(--main-article-transform);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.main-article__paragraph {
+  max-width: calc(var(--index) * 30);
+  font-size: calc(var(--index) * 0.9);
+  margin-top: calc(var(--index) / 1.25);
+  -webkit-transform: var(--main-article-transform);
+      -ms-transform: var(--main-article-transform);
+          transform: var(--main-article-transform);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.content {
+  will-change: transform;
+}
+
+.copy {
+  position: absolute;
+  bottom: calc(var(--index) * 2.5);
+  opacity: 0.45;
+  font-size: calc(var(--index) * 0.75);
+  letter-spacing: calc(var(--index) / 37.5);
+}
+
+.webp .main-header::after{ background-image: url(../img/ground.webp); }
