@@ -378,4 +378,4 @@ body {
   letter-spacing: calc(var(--index) / 37.5);
 }
 
-.webp .main-header::after{ background-image: url(../img/ground.webp); }
+.webp .main-header::after{ background-image: url(../img/ground.png); }
