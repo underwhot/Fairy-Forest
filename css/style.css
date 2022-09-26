@@ -233,7 +233,7 @@ body {
   position: relative;
 }
 
-.no-webp .main-header::after{
+.main-header::after{
   background-image: url(../img/ground.png); }
 
 .main-header::after {
